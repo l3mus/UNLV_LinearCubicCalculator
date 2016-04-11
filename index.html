@@ -1,0 +1,834 @@
+<html>
+<head>
+<script src="jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="calculate.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="universitylibraries.css">
+<link rel="stylesheet" type="text/css" href="special.css">
+<link rel="stylesheet" type="text/css" href="speccol.css">
+
+</head>
+<body lang="en" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<!-- Header -->
+
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+ <div id="global-header-bar" class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col span_6 unlv-logo">
+          <a href="http://www.unlv.edu" alt="UNLV Home">
+            <img src="/profiles/janus2/themes/omegalib/css/universitylibraries/img/logo-unlv.png">
+          </a>
+        </div>
+        <div class="col span_18 unlv-links">
+          <ul>
+            <li>
+              <a href="https://webcampus.unlv.edu/">WebCampus</a>
+            </li>
+            <li>
+              <a href="https://my.unlv.nevada.edu/psp/lvporprd/EMPLOYEE/EMPL/h/?tab=PAPP_GUEST">MyUNLV</a>
+            </li>
+            <li>
+              <a href="http://rebelmail.unlv.edu/">Rebelmail</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="header wrapper" style="background-position: 0% 0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col span_24">
+          <a class="logo" href="/speccol">
+            <img id="logo" src="/profiles/janus2/themes/omegalib/css/universitylibraries/speccol/img/logo-special-collections.png" title="Architecture Studies Library Home">
+          </a>
+          <div class="col span_12">
+            <div class="search-tool-wrapper clearfix">
+  <p class="more-research">
+    <strong>Links: </strong><a href="/">University Libraries</a>, <a href="/speccol/visit/contact">Contact Special Collections</a>
+  </p>
+  <form id="ui_element" class="sb_wrapper clearfix" action="http://unlv.summon.serialssolutions.com/search">
+    <p>
+      <span id="sb_arrow" class="sb_down"></span>
+      <input class="sb_input" type="text" name="s.q" autocomplete="off">
+      <input class="sb_search" type="submit" value="">
+    </p>
+    <ul class="sb_dropdown" style="display: none;">
+            <div id="sc-search">
+            <ul>
+              <li>
+                <input id="r1" type="radio" name="search-type" value="search-summon" checked="">
+                <label for="r1" title="Search the Libraries' books, articles, and more">
+                    <span class="fa-radio"></span><span class="glyph"></span><span class="label"> Quick Search</span>
+                    <div class="sub-description">Books, full-text articles, and more</div>
+                </label>
+              </li>
+              <li>
+                <input id="r2" type="radio" name="search-type" value="search-catalog" data-value="http://webpac.library.unlv.edu/search~S1/X">
+                <label for="r2" title="Search for Special Collections' books, periodicals, maps, and manuscripts">
+                    <span class="fa-radio"></span><span class="glyph"></span><span class="label"> Catalog</span>
+                    <div class="sub-description">Books, periodicals, and more in Special Collections</div>
+                </label>
+              </li>
+              <li>
+                <input id="r3" type="radio" name="search-type" value="search-speccoldatabase" data-value="http://www.library.unlv.edu/speccol/databases/index.php">
+              <label for="r3" title="Search for photographs, oral histories, manuscripts, and University Archives">
+                <span class="fa-radio"></span><span class="glyph"></span><span class="label"> Special Collections Database</span>
+                <div class="sub-description">Oral histories, photographs, manuscripts, and University Archives</div>
+              </label>              
+              </li>
+              <li>
+                <input id="r4" type="radio" name="search-type" value="search-manuscript" data-value="http://www.library.unlv.edu/speccol/finding-aids-search.html">
+                <label for="r4" title="Search detailed descriptions of select manuscript collections">
+                    <span class="fa-radio"></span><span class="glyph"></span><span class="label"> Manuscript Finding Aids</span>
+                    <div class="sub-description">Guides to select manuscript collections</div>
+                </label>
+              </li>
+              <li>
+                <input id="r5" type="radio" name="search-type" value="search-digital" data-value="http://d.library.unlv.edu/cdm/search/">
+                <label for="r5" title="Search for digital photographs and other digitized materials">
+                    <span class="fa-radio"></span><span class="glyph"></span><span class="label"> Digital Collections</span>
+                    <div class="sub-description">Digitized items available online</div>
+                </label>
+              </li>
+              <li>
+                <input id="r6" type="radio" name="search-type" value="search-library-info" data-value="http://www.library.unlv.edu/search/googleresults.html">
+                <label for="r6" title="Search the content of the Library's website">
+                    <span class="fa-radio"></span><span class="glyph"></span><span class="label"> Library Information</span>
+                    <div class="sub-description">Library Information</div>
+                </label>
+              </li>
+            </ul>
+            </div>
+        </ul>
+    </form>
+  <div class="search-help">
+    <a href="http://www.library.unlv.edu/speccol/research_and_services/finding_our_materials"><span class="glyph"></span></a>
+    </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <nav class="wrapper main-nav">
+    <div class="container">
+      <div class="row">
+        <div class="col span_24">
+          <div class="mobile-menu">
+            <button>
+              <span class="glyph"></span> Menu
+            </button>
+          </div>
+          <ul id="main-menu"><li class="menu-2059 active-trail first active"><a href="/speccol" class="first home active-trail active"><span class="glyph"></span></a></li><li class="menu-2030"><a href="/speccol/about">About</a></li><li class="menu-2034"><a href="/speccol/centers">Centers</a></li><li class="menu-2032"><a href="/speccol/collections">Collections</a></li><li class="menu-2033"><a href="/speccol/collecting_strengths" title="Collecting Strengths of the UNLV Libraries Special Collections">Collecting Strengths</a></li><li class="menu-2031"><a href="/speccol/research_and_services">Research &amp; Services</a></li><li class="menu-2029 last"><a href="/speccol/visit">Visit</a></li></ul>        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="content home">
+	<div class = "container">
+		<div class = "row">
+			<div class="col_span_24">
+	
+		<div id="new_scontentarea">
+
+			<div class="breadcrumb" id="new_breadcrumbs">
+			  <a href="/">UNLV Libraries</a> -&gt; <a href="/speccol/">Special Collections</a> -&gt; Search Databases
+			</div>
+
+		  <h1 class="title" id="page-title-speccol">Cubic and Linear Foot Calculator</h1>
+			
+		  <label>*Please note, this tool uses the <b>width</b> entered for each box to convert cubic footage to linear footage. </label>
+		  <!--Begin page content-->
+			<div class="table"> 
+				<div class="row" id="top-row">
+					<div class="cell" id="left">
+						<label > Types of containers <br> (L(in) x W(in) x H(in))</label>
+					</div>
+					<div class="cell" id="middle">
+						<label > Number of containers</label>
+					</div>
+					<div class="cell" >
+						<label> Size (ft<sup>3</sup>) </label> 
+					</div>
+					<div class="cell" >
+						<label> Linear Feet </label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label > Standard Record Storage Carton <br>(15.5 x 12.5 x 10.25)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="standard_record_storage_carton" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_standard_record_storage_carton" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_standard_record_storage_carton_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Letter Document Box  <br> (12.25 x 5 x 10.25) </label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="letter_document_box" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_letter_document_box" class="results">0.0000</label>
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_letter_document_box_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Slim Letter Document Box  <br> (12.25 x 2.5 x 10.25)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="slim_letter_document_box" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_slim_letter_document_box" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_slim_letter_document_box_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Legal Document Box  <br> (15.25 x 5 x 10.25)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="legal_document_box" placeholder="0.0" type="number"  class="num_boxes">
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_legal_document_box" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_legal_document_box_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Slim Legal Document Box  <br> (15.25 x 2.5 x 10.25)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="slim_legal_document_box" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_slim_legal_document_box" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_slim_legal_document_box_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+				
+					<div class="cell" id="left">
+						<label>7" Legal Document Box  <br> (15.25 x 7 x 10.25)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="7_legal_document_box" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_7_legal_document_box" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_7_legal_document_box_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Oversize Box  <br> (31 x 24 x 3)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="oversize_box_1" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_oversize_box_1" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_oversize_box_1_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Oversize Box  <br> (4 x 20 x 16)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="oversize_box_2" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_oversize_box_2" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_oversize_box_2_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Flat File<br> (16 x 20 x assume 
+						<input type ="Text" id="inpt_flat_file_1"   placeholder="0.0" type="number"  class="assumption_box">)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="flat_file_1" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_flat_file_1" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_flat_file_1_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Flat File  <br> (36 x 48  x assume 
+						<input type ="Text" id="inpt_flat_file_2"   placeholder="0.0" type="number"  class="assumption_box"> )</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="flat_file_2" placeholder="0.0" type="number"  class="num_boxes">
+					</div>
+					<div class="cell" id="right">				
+						<label id = "lbl_flat_file_2" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_flat_file_2_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Flat File  <br>(30 x 24 x assume 
+						<input type ="Text" id="inpt_flat_file_3" placeholder="0.0" type="number" class="assumption_box">)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="flat_file_3" placeholder="0.0" type="number"  class="num_boxes">
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_flat_file_3" value="0.2" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_flat_file_3_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Roll<br> (34 x 3 x 3 )</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="roll_1" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_roll_1" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_roll_1_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Roll<br> (34 x 4 x 4 )</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="roll_2" placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_roll_2" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_roll_2_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label>Hanging Folder  <br> (
+						<input type ="Text" id="inpt_hanging_folder"  placeholder="0.0" type="number" class="assumption_box"> x 16 x 9)</label>
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="hanging_folder"  placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_hanging_folder" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_hanging_folder_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div> 
+				<div class="row">
+					<div class="cell" id="left">
+						Custom Container 1<br> (
+						<input type ="Text" id="inpt_custom_container_length_1" placeholder="0.0" type="number" class="assumption_box"> x 
+						<input type ="Text" id="inpt_custom_container_height_1" placeholder="0.0" type="number" class="assumption_box"> x 
+						<input type ="Text" id="inpt_custom_container_width_1"  placeholder="0.0" type="number" class="assumption_box">)
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="custom_container_1"  placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_custom_container_1" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_custom_container_1_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div> 
+				<div class="row">
+					<div class="cell" id="left">
+						Custom Container 2<br> (
+						<input type ="Text" id="inpt_custom_container_length_2" placeholder="0.0" type="number" class="assumption_box"> x 
+						<input type ="Text" id="inpt_custom_container_height_2" placeholder="0.0" type="number" class="assumption_box"> x 
+						<input type ="Text" id="inpt_custom_container_width_2"  placeholder="0.0" type="number" class="assumption_box">)
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="custom_container_2"  placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_custom_container_2" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_custom_container_2_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						Custom Container 3<br> (
+						<input type ="Text" id="inpt_custom_container_length_3" placeholder="0.0" type="number" class="assumption_box"> x 
+						<input type ="Text" id="inpt_custom_container_height_3" placeholder="0.0" type="number" class="assumption_box"> x 
+						<input type ="Text" id="inpt_custom_container_width_3"  placeholder="0.0" type="number" class="assumption_box">)
+					</div>
+					<div class="cell" id="middle">
+						<input type ="Text" id="custom_container_3"  placeholder="0.0" type="number"  class="num_boxes"> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_custom_container_3" class="results">0.0000</label> 
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_custom_container_3_lf" class="results_lf">0.0000</label> 
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell" id="left">
+						<label><b>Total</b>  </label>
+					</div>
+					<div class="cell" id="middle">
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_total">0.0000</label>
+					</div>
+					<div class="cell" id="right">
+						<label id = "lbl_total_lf">0.0000</label> 
+					</div>
+				</div>
+			</div>
+				<!--endform -->
+
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+
+<div id="footer">
+    <!--Bottom menu choices-these may be removed if you like-->
+    <!-- include virtual="/botmenu.html"-->
+ 
+
+<!--
+    <p>Updated:
+-->
+      <!-- echo var="LAST_MODIFIED"-->
+
+
+      <br>
+      <!--At least one of these needs to be an email link-->
+<!--
+      Content Provider: <a href="/speccol/index.html">Department of Special Collections</a> <br>
+-->
+<!--
+      Content Provider: <a href="/about/staff/libstafinfo.php?style=other&personid=11">Su Kim Chung</a> <br>
+      Page Editor: <a href="/about/staff/libstafinfo.php?style=other&personid=141">Thomas Sommer</a>
+-->
+      <!--Page editor Name-->
+      <br>
+
+      <!-- include virtual="/mainfoot.html" -->
+
+
+
+
+
+
+
+
+
+    <footer>
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col span_6"> -->
+          <div class="col span_6">
+  <h3>Locations</h3>
+  <div class="locations">
+    <div class="select-library stilts">
+      <div class="select2-container" id="s2id_liblocation"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span class="select2-chosen">Special Collections</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow"><b></b></span></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen2" tabindex="1"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select name="liblocation" id="liblocation" tabindex="-1" class="select2-offscreen">
+        <option value="specialcol">Special Collections</option>
+        <option value="lied">Lied Library</option>
+        <option value="arch">Architecture Library</option>
+        <option value="curr">Curriculum Materials</option>
+        <option value="music">Music Library</option>
+        <option value="law">Law Library</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="lib-lied" class="lib-branch">
+    <p class="address grid-6 col alpha">4505 South Maryland Pkwy.
+      <br>Box 457001
+      <br>Las Vegas, Nevada
+      <br>89154-7001
+      <br>
+      <br><a href="http://www.library.unlv.edu">UNLV Libraries Site »</a>
+      <br>(702) 895-2111
+    </p>
+  </div>
+  <div id="lib-specialcol" class="lib-branch active">
+    <p class="address grid-6 col alpha">4505 South Maryland Pkwy.
+      <br>Box 457010
+      <br>Las Vegas, Nevada
+      <br>89154-7010
+      <br>
+      <br><a href="/speccol">Special Collections Library Site »</a>
+      <br>(702) 895-2234
+    </p>
+  </div>
+  <div id="lib-arch" class="lib-branch">
+    <p class="address grid-6 col alpha">4505 South Maryland Pkwy.
+      <br>Box 454049
+      <br>Las Vegas, Nevada
+      <br>89154-4049
+      <br>
+      <br><a href="/arch">Arch Library Site »</a>
+      <br>(702) 895-1959
+    </p>
+  </div>
+  <div id="lib-curr" class="lib-branch">
+    <p class="address grid-6 col alpha">4505 South Maryland Pkwy.
+      <br>Box 453009
+      <br>Las Vegas, Nevada
+      <br>89154-3009
+      <br>
+      <br><a href="/cml">CML Library Site »</a>
+      <br>(702) 895-3593
+    </p>
+  </div>
+  <div id="lib-music" class="lib-branch">
+    <p class="address grid-6 col alpha">4505 South Maryland Pkwy.
+      <br>Box 457002
+      <br>Las Vegas, Nevada
+      <br>89154-7002
+      <br>
+      <br><a href="/music">Music Library Site »</a>
+      <br>(702) 895-2541
+    </p>
+  </div>
+  <div id="lib-law" class="lib-branch">
+    <p class="address grid-6 col alpha">4505 South Maryland Pkwy.
+      <br>Box 451003
+      <br>Las Vegas, Nevada
+      <br>89154-1003
+      <br>
+      <br><a href="http://law.unlv.edu/law-library/home.html">Law Library Site »</a>
+      <br>(702) 895-3671
+    </p>
+  </div>
+  
+  <div class="hours col alpha">
+    <h5>Today's Hours:</h5>
+    <div id="lib-lied-hours" class="lib-branch">
+<p>7:30AM - 10PM</p>
+</div>
+<div id="lib-specialcol-hours" class="lib-branch active">
+<p>9AM - 5PM</p>
+</div>
+<div id="lib-arch-hours" class="lib-branch">
+<p>9AM - 5PM</p>
+</div>
+<div id="lib-curr-hours" class="lib-branch">
+<p>8AM - 8PM</p>
+</div>
+<div id="lib-music-hours" class="lib-branch">
+<p>10AM - 6PM</p>
+</div>
+  </div>
+</div>
+
+<div class="col span_6">
+  <h3 class="placeholder">
+    &nbsp;
+  </h3>
+  <div id="map" class="map" style="position: relative; overflow: hidden; transform: translateZ(0px); background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;) 8 8, default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -107px; top: -144px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -107px; top: 112px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 149px; top: -144px;"></div><div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 149px; top: 112px;"></div></div></div></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"></div><div style="position: absolute; z-index: 0; transform: translateZ(0px); left: 0px; top: 0px;"><div style="overflow: hidden;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="transform: translateZ(0px); position: absolute; left: -107px; top: -144px; transition: opacity 200ms ease-out;"><img src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i17!2i23613!3i51421!4i256!2m3!1e0!2sm!3i338005191!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2sp.s%3A-100%7Cp.g%3A0.5!4e0&amp;token=93647" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: -107px; top: 112px; transition: opacity 200ms ease-out;"><img src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i17!2i23613!3i51422!4i256!2m3!1e0!2sm!3i338004760!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2sp.s%3A-100%7Cp.g%3A0.5!4e0&amp;token=37703" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: 149px; top: -144px; transition: opacity 200ms ease-out;"><img src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i17!2i23614!3i51421!4i256!2m3!1e0!2sm!3i338005191!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2sp.s%3A-100%7Cp.g%3A0.5!4e0&amp;token=30880" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="transform: translateZ(0px); position: absolute; left: 149px; top: 112px; transition: opacity 200ms ease-out;"><img src="https://maps.googleapis.com/maps/vt?pb=!1m5!1m4!1i17!2i23614!3i51422!4i256!2m3!1e0!2sm!3i338005191!3m14!2sen-US!3sUS!5e18!12m1!1e47!12m3!1e37!2m1!1ssmartmaps!12m4!1e26!2m2!1sstyles!2sp.s%3A-100%7Cp.g%3A0.5!4e0&amp;token=112618" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div style="padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 222px; height: 94px; position: absolute; left: 5px; top: 5px; background-color: white;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2016 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 72px; bottom: 0px; width: 121px;"><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Map Data</a><span style="">Map data ©2016 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2016 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; -webkit-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><div style="width: 25px; height: 25px; margin-top: 10px; overflow: hidden; display: none; margin-right: 14px; position: absolute; top: 0px; right: 0px;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/sv5.png" draggable="false" class="gm-fullscreen-control" style="position: absolute; left: -52px; top: -86px; width: 164px; height: 112px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div><div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; height: 14px; line-height: 14px; display: none; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_new" title="Report errors in the road map or imagery to Google" href="https://www.google.com/maps/@36.1072,-115.142325,17z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoprint" draggable="false" controlwidth="28" controlheight="55" style="margin: 10px; -webkit-user-select: none; position: absolute; bottom: 69px; right: 28px;"><div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; left: 0px; top: 0px;"><div draggable="false" style="-webkit-user-select: none; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; width: 28px; height: 55px; background-color: rgb(255, 255, 255);"><div title="Zoom in" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: 0px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></div><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; top: 0px; background-color: rgb(230, 230, 230);"></div><div title="Zoom out" style="position: relative; width: 28px; height: 27px; left: 0px; top: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: -15px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></div></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div title="Rotate map 90 degrees" style="width: 28px; height: 28px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; cursor: pointer; display: none; background-color: rgb(255, 255, 255);"><img src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div class="gm-tilt" style="width: 0px; height: 0px; overflow: hidden; position: absolute; border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; top: 0px; cursor: pointer; background-color: rgb(255, 255, 255);"><img src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl4.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 170px; height: 54px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="https://maps.google.com/maps?ll=36.1072,-115.142325&amp;z=17&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div></div></div>
+  <div class="footer-block">
+    <h5>
+      More Information
+    </h5>
+    <ul class="menu no-bullet stilts">
+      <li>
+        <a href="/services/hours">Future Library Hours</a>
+      </li>
+      <li>
+        <a href="http://www.campusdish.com/en-US/CSW/UNLV/RetailLocations/LiedLibrary.htm">Book &amp; Bean Hours</a>
+      </li>
+      <li>
+        <a href="http://www.unlv.edu/parking">Parking Information</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="col span_6">
+  <h3>
+    Contact
+  </h3>
+  <div class="footer-block">
+    <h5>
+      Ask Us!
+    </h5>
+    <ul class="menu no-bullet">
+<!--
+      <li>
+        <a href="#" onclick="MyWindow=window.open('/ask/h3lp.html','MyWindow','toolbar=no,location=no,directories=no,status=no, menubar=no,scrollbars=no,resizable=no,width=340,height=340'); return false;"><span class="glyph">&#xf086;</span> Chat</a>
+      </li>
+      <li>
+        <a href="/contact/text_message"><span class="glyph">&#xf10a;</span> Text</a>
+      </li>
+      <li>
+        <a href="/contact"><span class="glyph">&#xf095;</span> Phone</a>
+      </li>
+-->
+
+      <li>
+        <a href="#" onclick="MyWindow=window.open('https://v2.libanswers.com/widget_standalone.php?hash=2de07cac2d72945bcdf47593b1c7308d','Click to begin chat','toolbar=no,location=no,directories=no,status, menubar=no,scrollbars,resizable,width=500,height=340'); return false;">
+          <span class="glyph"></span> Chat
+        </a>
+      </li>
+      <li>
+            <span class="footer-text">
+          <span class="glyph"></span> Text: (702) 945-0822
+            </span>
+      </li>
+      <li>
+            <span class="footer-text">
+          <span class="glyph"></span>&nbsp; Phone: (702) 895-2111
+            </span>
+      </li>
+      <li>
+        <a href="/ask/email.php"><span class="glyph"></span> Email</a>
+      </li>
+    </ul>
+  </div>
+    <div class="footer-block">
+      <h5>
+        Social Media
+      </h5>
+      <div class="contact-group-links ">
+        <ul class="menu no-bullet">
+          <li>
+            <a href="https://www.facebook.com/unlvspecialcollections">
+              <span class="glyph facebook"></span> Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/unlvlibraries">
+              <span class="glyph twitter"></span> Twitter
+            </a>
+          </li>
+          <li>
+            <a href="http://www.youtube.com/user/unlvlibraries">
+              <span class="glyph youtube"></span> YouTube
+            </a>
+          </li>
+          <li>
+            <a href="/contact/social_media">All Social Media</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+<div class="col span_6">
+  <h3 class="placeholder">
+    &nbsp;
+  </h3>
+  <div class="footer-block">
+    <h5>
+      Directories
+    </h5>
+    <ul class="menu no-bullet">
+      <li>
+        <a href="/contact/librarians_by_subject">Librarians by Subject</a>
+      </li>
+      <li>
+        <a href="/about/staff/libstafinfo.php?style=2">Staff Directory</a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-block">
+    <h5>
+      Employment
+    </h5>
+    <ul class="menu no-bullet">
+      <li>
+        <a href="/employment">Full-Time</a>
+      </li>
+      <li>
+        <a href="/employment/student.html">Student</a>
+      </li>
+    </ul>
+  </div>
+  <div class="footer-block">
+    <h5>
+      Feedback
+    </h5>
+    <ul class="menu no-bullet">
+      <li>
+        <a href="/comments.php"><span class="glyph"></span> Provide Feedback</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="col span_24">
+  <p class="copyright mobilecheck">
+    <a href="/">© 2014 University of Nevada, Las Vegas</a>
+  </p>
+  <a href="/user" class="user">
+    <span class="glyph"></span>
+  </a>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div></footer>
+
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYDjRnOthPllmhXTQJi8UCXO3JojoaqDM&amp;sensor=false"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/profiles/janus2/themes/omegalib/js/universitylibraries/select2.min.js"></script>
+  <script src="/profiles/janus2/themes/omegalib/js/universitylibraries/speccol.js"></script>
+  <script src="/profiles/janus2/themes/omegalib/js/universitylibraries/jquery.easyfader.js"></script>
+  <script src="/profiles/janus2/themes/omegalib/js/universitylibraries/respond.min.js"></script>
+  <script src="/profiles/janus2/themes/omegalib/js/universitylibraries/universitylibraries.js"></script>
+  <!-- <script src="../../../js/universitylibraries/jquery.touchSwipe.min.js"></script> -->
+    <script type="text/javascript">
+    
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
+    function init() {
+      var map;
+      // Basic options for a simple Google Map
+      // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+      var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        zoom: 17,
+        zoomControl:  true,
+        // zoomControlStyle: small,
+        scrollwheel: false,
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(36.1072,-115.142325), 
+        // How you would like to style the map. 
+        streetViewControl: false,
+        mapTypeControl: false,
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: [{"featureType":"all","stylers":[{"saturation":-100},{"gamma":0.5}]}]
+      };
+      // Get the HTML DOM element that will contain your map 
+      // We are using a div with id="map" seen below in the <body>
+      var mapElement = document.getElementById('map');
+      // Create the Google Map using out element and options defined above
+      var map = new google.maps.Map(mapElement, mapOptions);
+      // move map when needed
+      // $('select#liblocation').live('change', function(e) {
+      $('select#liblocation').change(function(e) {
+        $('.lib-branch.active').hide().removeClass('active');
+        $('#lib-'+ e.val).fadeIn().addClass('active');
+        switch (e.val) {
+          case 'specialcol':
+            moveToLocation(36.1072,-115.142325);
+            $('div#lib-'+ e.val +'-hours').fadeIn().addClass('active');
+            $('div.hours').fadeIn();
+            break;
+          case 'lied':
+            moveToLocation(36.1072,-115.142325);
+            $('div#lib-'+ e.val +'-hours').fadeIn().addClass('active');
+            $('div.hours').fadeIn();
+            break;
+          case 'arch':
+            moveToLocation(36.102571,-115.138773);
+            $('div#lib-'+ e.val +'-hours').fadeIn().addClass('active');
+            $('div.hours').fadeIn();
+            break;
+          case 'curr':
+            moveToLocation(36.109294,-115.140635);
+            $('div#lib-'+ e.val +'-hours').fadeIn().addClass('active');
+            $('div.hours').fadeIn();
+            break;
+          case 'music':
+            moveToLocation(36.110596,-115.138191);
+            $('div#lib-'+ e.val +'-hours').fadeIn().addClass('active');
+            $('div.hours').fadeIn();
+            break;
+          case 'law':
+            moveToLocation(36.107952,-115.139975);
+            // remove hours altogether
+            $('div.hours').fadeOut();
+            break;
+        }
+      });
+
+      // funtion that moves the map
+      function moveToLocation(lat, lng) {
+        var center = new google.maps.LatLng(lat, lng);
+        // using global variable:
+        map.panTo(center);
+      }
+    }
+  </script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/in-prof/dev/jquery_update/replace/jquery/1.7/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+
+
+<script type="text/javascript" src="/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="/misc/drupal.js?n5vuno"></script>
+<script type="text/javascript" src="/sites/all/modules/in-prof/contrib/views/js/views-contextual.js?n5vuno"></script>
+<script type="text/javascript" src="/sites/all/modules/in-prof/features_faq/features_faq.js?n5vuno"></script>
+<script type="text/javascript" src="/sites/all/modules/in-prof/contrib/image_field_caption/image_field_caption.js?n5vuno"></script>
+<script type="text/javascript" src="/sites/all/modules/in-prof/library_content/library_content.js?n5vuno"></script>
+<script type="text/javascript" src="/sites/all/modules/in-prof/libsearch/libsearch.js?n5vuno"></script>
+
+
+<!--
+<script type="text/javascript" src="http://staging.library.unlv.edu/sites/all/modules/in-prof/contrib/admin_menu/admin_menu.js?n5vuno"></script>
+<script type="text/javascript" src="http://staging.library.unlv.edu/sites/all/modules/in-prof/contrib/admin_menu/admin_menu_toolbar/admin_menu_toolbar.js?n5vuno"></script>
+<script type="text/javascript" src="http://staging.library.unlv.edu/sites/all/modules/contrib/environment_indicator/environment_indicator.min.js?n5vuno"></script>
+-->
+
+<script type="text/javascript" src="/sites/all/modules/in-prof/contrib/views_slideshow/js/views_slideshow.js?n5vuno"></script>
+<script type="text/javascript" src="/sites/all/modules/in-prof/contrib/google_analytics/googleanalytics.js?n5vuno"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-23994896-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = "https://www.library.unlv.edu/sites/default/files/googleanalytics/ga.js?n5vuno";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"omegalib","theme_token":"djiPCmkXFz5kLIapj59NcldCGphsG-FZyiOaAjReYJs","js":{"https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.7.1\/jquery.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/in-prof\/contrib\/views\/js\/views-contextual.js":1,"sites\/all\/modules\/in-prof\/features_faq\/features_faq.js":1,"sites\/all\/modules\/in-prof\/contrib\/image_field_caption\/image_field_caption.js":1,"sites\/all\/modules\/in-prof\/library_content\/library_content.js":1,"sites\/all\/modules\/in-prof\/libsearch\/libsearch.js":1,"sites\/all\/modules\/in-prof\/contrib\/admin_menu\/admin_menu.js":1,"sites\/all\/modules\/in-prof\/contrib\/admin_menu\/admin_menu_toolbar\/admin_menu_toolbar.js":1,"sites\/all\/modules\/contrib\/environment_indicator\/environment_indicator.min.js":1,"sites\/all\/modules\/in-prof\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/in-prof\/contrib\/google_analytics\/googleanalytics.js":1,"1":1},"css":{"sites\/all\/modules\/in-prof\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/all\/modules\/in-prof\/library_content\/library_content.css":1,"sites\/all\/modules\/in-prof\/libsearch\/libsearch.css":1,"sites\/all\/modules\/in-prof\/contrib\/logintoboggan\/logintoboggan.css":1,"sites\/all\/modules\/in-prof\/contrib\/mollom\/mollom.css":1,"sites\/all\/modules\/in-prof\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/in-prof\/contrib\/admin_menu\/admin_menu.css":1,"sites\/all\/modules\/in-prof\/contrib\/admin_menu\/admin_menu_toolbar\/admin_menu_toolbar.css":1,"modules\/shortcut\/shortcut.css":1,"sites\/all\/modules\/in-prof\/contrib\/ckeditor\/ckeditor.css":1,"sites\/all\/modules\/in-prof\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/environment_indicator\/environment_indicator.css":1,"sites\/all\/modules\/in-prof\/contrib\/ldap\/ldap_help\/ldap_help.css":1,"sites\/all\/modules\/in-prof\/contrib\/views_slideshow\/views_slideshow.css":1,"profiles\/janus2\/themes\/omegalib\/css\/omegalib-alpha-default-narrow.css":1,"profiles\/janus2\/themes\/omegalib\/css\/ie8-and-below.css":1,"profiles\/janus2\/themes\/omegalib\/css\/grid\/omegalib_gridpak\/normal\/omegalib-gridpak-normal-24.css":1}},"environment_indicator":{"margin":"1","position":"left","text":"STAGING SERVER","color":"#d00c0c"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"admin_menu":{"destination":"destination=speccol2","replacements":{".admin-menu-users a":"0 \/ 0"},"margin_top":1,"toolbar":[]}});
+//--><!]]>
+</script>
+    <p></p>
+    </div>
+</html>
