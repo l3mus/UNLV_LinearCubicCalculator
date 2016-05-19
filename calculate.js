@@ -1,95 +1,74 @@
 jQuery(document).ready(function($){
 	
 	//Allow only floats in box
-	$('.assumption_box').keypress(function(event) {
-	  if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+	$(document).on('keypress', '.num_boxes', function(event) {
+	  if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.charCode !== 32) && (event.charCode != 0) && (event.which < 48 || event.which > 57) ) {
 		event.preventDefault();
 	  }
-	});
-	
-	$('.num_boxes').keypress(function(event) {
-	  if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+	}).on('keydown', function(e) {
+	   if (e.keyCode==8)
+		 $('element').trigger('keypress');
+	 });
+	//Allow only floats in box
+	$(document).on('keypress', '.assumption_box', function(event) {
+	  if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.charCode !== 32) && (event.charCode != 0) && (event.which < 48 || event.which > 57) ) {
 		event.preventDefault();
 	  }
-	});
+	}).on('keydown', function(e) {
+	   if (e.keyCode==8)
+		 $('element').trigger('keypress');
+	 });
 	
-	//Boxes with custom dimensions
-	$('.assumption_box').on('input',function() {
-	   id = $(this).attr('id');
-	   var length = 0;
-	   var width = 0;
-	   var height = 0; 
-	   var cubic_feet = 0;
-	   var linear_feet = 0;
-	   var total = 0;
-	   switch(id) {
-		  case 'inpt_flat_file_1':
-		   length = 16;
-		   width = 20;
-		   height = $(this).val();
-		   console.log(height);
-		   input_id = 'flat_file_1';
-		   break;
-		   
-		   case 'inpt_flat_file_2':
-		   length = 36;
-		   width = 48;
-		   height = $(this).val();
-		   input_id = 'flat_file_2';
-		   break;
-		   
-		   case 'inpt_flat_file_3':
-		   length = 30;
-		   width = 24;
-		   height = $(this).val();
-		   input_id = 'flat_file_3';
-		   break;
-		   
-		   case 'inpt_hanging_folder':
-		   length = $(this).val();
-		   width = 16;
-		   height = 9;
-		   input_id = 'hanging_folder';
-		   break;
-		   
-		   case 'inpt_custom_container_length_1':
-		   case 'inpt_custom_container_width_1':
-		   case 'inpt_custom_container_height_1':
-		   length = $('#inpt_custom_container_length_1').val();
-		   width  = $('#inpt_custom_container_width_1').val();
-		   height = $('#inpt_custom_container_height_1').val();
-		   input_id = 'custom_container_1';
-		   break;
-		   
-		   case 'inpt_custom_container_length_2':
-		   case 'inpt_custom_container_width_2':
-		   case 'inpt_custom_container_height_2':
-		   length = $('#inpt_custom_container_length_2').val();
-		   width  = $('#inpt_custom_container_width_2').val();
-		   height = $('#inpt_custom_container_height_2').val();
-		   input_id = 'custom_container_2';
-		   break;
-		   
-		   case 'inpt_custom_container_length_3':
-		   case 'inpt_custom_container_width_3':
-		   case 'inpt_custom_container_height_3':
-		   length = $('#inpt_custom_container_length_3').val();
-		   width  = $('#inpt_custom_container_width_3').val();
-		   height = $('#inpt_custom_container_height_3').val();
-		   input_id = 'custom_container_3';
-		   break;
-	   }
-		num = $('#' + input_id).val(); 
+	$("#btn_clear_all").on('click', function(event){
 		
-	    calculateAndDisplay(length,width,height,num,input_id);
-	});
+		$('div').filter(function() {
+			return parseInt(this.id.replace('custom_container',''),10) > 1;
+		}).remove();
+		
+		$(':input').val('');
+		$('label[class*="results"]').html('0.0000');
+		$('#lbl_total').html('0.0000');
+		$('#lbl_total_lf').html('0.0000');
 
-	$('.num_boxes').on('input', function() {  
-	   num = $(this).val(); // get the current value of the input field.
-	   id = $(this).attr('id');
+	});
+	
+	//Add Custom Container 
+	$('#btn_add_custom_container').click(function() {
+		//Find last Custom Container Created
+		var $div = $('div[id^="custom_container"]:last');
+		var num = parseInt( $div.prop("id").match(/\d+/g), 10 ) +1;
+		
+		var $custom_container = $div.clone().prop('id', 'custom_container'+num );
+		$custom_container.find(".table").html('<div class="cell custom_title" id="left">' +
+							'<lable>Custom Container ' + num + '<br>' +
+							'(<input type ="Text" id="inpt_custom_container_length_'  + num + '" placeholder="0.0" type="number" class="assumption_box"> x '  + 
+							'<input type ="Text" id="inpt_custom_container_width_' + num + '" placeholder="0.0" type="number" class="assumption_box"> x ' +
+							'<input type ="Text" id="inpt_custom_container_height_' + num + '" placeholder="0.0" type="number" class="assumption_box">)</lable>'  + 
+							'</div>' +
+							'<div class="cell" id="middle">' +
+								'<input type ="Text" id="custom_container_' + num + '" placeholder="0.0" type="number"  class="num_boxes">' +
+							'</div>' +
+							'<div class="cell" id="right">'+
+								'<label id = "lbl_custom_container_' + num + '" class="results">0.0000</label>' + 
+							'</div>' +
+							'<div class="cell" id="right">' +
+								'<label id = "lbl_custom_container_' + num +  '_lf" class="results_lf">0.0000</label>' + 
+							'</div>');
+		$div.after( $custom_container);
+
+	});
+	$(document).on('input', '.assumption_box, .num_boxes',function() {
+		
+	   //Match Id to use this function for both assumption_box and num_boxes
+	   id = $(this).attr('id').replace('inpt_', '').replace('length_', '').replace('width_', '').replace('height_', '');
+	   num = $("#" + id).val(); // get the current value of the input field.
+	   console.log("HERE");
+	   console.log(id);
 	   var length = 0;
 	   var width = 0;
 	   var height = 0; 
+	   var custom_container_number = 1;
+	   if(id.match(/\d+$/))	var custom_container_number = id.match(/\d+$/)[0];
 	   switch(id) {
 		   case 'standard_record_storage_carton':
 		   length = 15.5;
@@ -171,26 +150,14 @@ jQuery(document).ready(function($){
 		   
 		   case 'hanging_folder':
 		   length = $('#inpt_hanging_folder').val();
-		   height = 16;
-		   width = 9;
+		   height = 9;
+		   width = 16;
 		   break;
 		   
-		   case 'custom_container_1':
-		   length = $('#inpt_custom_container_length_1').val();
-		   width = $('#inpt_custom_container_width_1').val();
-		   height =  $('#inpt_custom_container_height_1').val();
-		   break;
-		   
-		   case 'custom_container_2':
-		   length = $('#inpt_custom_container_length_2').val();
-		   width = $('#inpt_custom_container_width_2').val();
-		   height =  $('#inpt_custom_container_height_2').val();
-		   break;
-		   
-		   case 'custom_container_3':
-		   length = $('#inpt_custom_container_length_3').val();
-		   width = $('#inpt_custom_container_width_3').val();
-		   height =  $('#inpt_custom_container_height_3').val();
+		   case 'custom_container_' + custom_container_number:
+		   length = $('#inpt_custom_container_length_' + custom_container_number).val();
+		   width = $('#inpt_custom_container_width_' + custom_container_number).val();
+		   height =  $('#inpt_custom_container_height_' + custom_container_number).val();
 		   break;
 	   }
 	   calculateAndDisplay(length,width,height,num,id);
@@ -199,8 +166,7 @@ jQuery(document).ready(function($){
 	function calculateAndDisplay(length,width,height,num,id){
 		var cubic_feet = 0;
 		var linear_feet = 0;
-	    var total = 0;
-	    var total_lf = 0;
+		
 	    //do calculations
 		cubic_feet = ((length/12) * (width/12) * (height/12)) * num;
 		linear_feet = (width/12) * num;
@@ -209,13 +175,10 @@ jQuery(document).ready(function($){
 	    $('#lbl_' + id).html(cubic_feet.toFixed(4));
 	    $('#lbl_' + id + "_lf").html(linear_feet.toFixed(4));
 		
-		//calculate total
-		total = getTotal();
-		total_lf = getLFTotal();
 		
 		//display total
-		$('#lbl_total').html(total.toFixed(4));
-		$('#lbl_total_lf').html(total_lf.toFixed(4));
+		$('#lbl_total').html(getTotal().toFixed(4));
+		$('#lbl_total_lf').html(getLFTotal().toFixed(4));
 		
 		return;
 	}
@@ -241,4 +204,56 @@ jQuery(document).ready(function($){
 		});
 		return total;
 	}
+	/*$(document).ready(function () {
+
+    function exportTableToCSV($table, filename) {
+
+        var $rows = $table.find('tr:has(td)'),
+
+            // Temporary delimiter characters unlikely to be typed by keyboard
+            // This is to avoid accidentally splitting the actual contents
+            tmpColDelim = String.fromCharCode(11), // vertical tab character
+            tmpRowDelim = String.fromCharCode(0), // null character
+
+            // actual delimiter characters for CSV format
+            colDelim = '","',
+            rowDelim = '"\r\n"',
+
+            // Grab text from table into CSV formatted string
+            csv = '"' + $rows.map(function (i, row) {
+                var $row = $(row),
+                    $cols = $row.find('td');
+
+                return $cols.map(function (j, col) {
+                    var $col = $(col),
+                        text = $col.text();
+
+                    return text.replace(/"/g, '""'); // escape double quotes
+
+                }).get().join(tmpColDelim);
+
+            }).get().join(tmpRowDelim)
+                .split(tmpRowDelim).join(rowDelim)
+                .split(tmpColDelim).join(colDelim) + '"',
+
+            // Data URI
+            csvData = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
+
+        $(this)
+            .attr({
+            'download': filename,
+                'href': csvData,
+                'target': '_blank'
+        });
+    }
+
+    // This must be a hyperlink
+    $(".export").on('click', function (event) {
+        // CSV
+        exportTableToCSV.apply(this, [$('#dvData>table'), 'export.csv']);
+        
+        // IF CSV, don't do event.preventDefault() or return false
+        // We actually need this to be a typical hyperlink
+    });
+});*/
 }); //End Document

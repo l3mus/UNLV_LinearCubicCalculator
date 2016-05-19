@@ -1,7 +1,8 @@
    .table
     {
         display: table;
-		padding: 0px 0px 20px 0px;
+		width:100%;
+		height:100%;
     }
     .heading
     {
@@ -17,7 +18,6 @@
     {
         display: table-cell;
 		overflow: hidden;
-		white-space: nowrap;
 		border: solid;
 		border-color: darkgrey;
 		border-width: thin;
@@ -25,21 +25,28 @@
 		padding-right: 5px;
 		width: 24%;
 		color: black;
-		height: 50px;
-		font-size: 22px;
+		height: 45px;
+		font-size: 14px;
 
+    }
+	.cell.topcell
+    {
+        background: #F2F1F2 none repeat scroll 0% 0%;
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#dedede));
+		background-image: -webkit-linear-gradient(top, #fefefe, #dedede);
+		font-size: 18px;
     }
 	.num_boxes
 	{
 		color: black;
 		font-size: 22px;
 		text-align: right;
-		height: 66px;
+		height: 50px;
 	}
 	.assumption_box
 	{
 		
-		width: 80px !important;
+		width: 60px !important;
 	}
 	.results
 	{
@@ -51,6 +58,12 @@
 	}
 	.num_boxes::-ms-clear {
 		display: none;
+	}
+	.container_info{
+		display: inline-block;
+	}
+	.container_info label{
+		display: block;
 	}
 	#left
 	{
@@ -64,16 +77,49 @@
 	}
 	#middle
 	{
-        padding-top: 5px;
+        padding-top: 3px;
 	}
-	#top-row
-	{
-		background: #dedede url(../../img/header-bkgrd.png) repeat-x top left;
-        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#dedede));
-		background-image: -webkit-linear-gradient(top, #fefefe, #dedede);
-	}
-	#lbl_total
+	#lbl_total, #lbl_total_lf
 	{
 		font-weight: bold;
+	}
+	#total_table
+	{
+		padding-bottom: 5px;
+	}
+	#container_info_area{
+		padding-bottom: 5px;
+	}
+	#execute_buttons{
+		float: right;
+		padding-bottom: 5px;
+	}
+	#btn_clear_all{
+		 background-color: #B10202;
+		border: none;
+		color: white;
+		padding: 8px 23px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+	}	
+	#btn_download{
+			
+		padding: 8px 23px;
+		border: none;
+		margin-top: 3px;
+		font-size: 16px;
+		cursor: pointer;
+	}
+	#btn_add_custom_container
+	{
+		width: 100%;
+		height: 100%;
+		margin-top: 3px;
+		font-size: 19px;
+		cursor: pointer;
 	}
 	
