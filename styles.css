@@ -59,10 +59,10 @@
 	.num_boxes::-ms-clear {
 		display: none;
 	}
-	.container_info{
+	.collection_info{
 		display: inline-block;
 	}
-	.container_info label{
+	.collection_info label{
 		display: block;
 	}
 	#left
@@ -87,7 +87,7 @@
 	{
 		padding-bottom: 5px;
 	}
-	#container_info_area{
+	#collection_info_area{
 		padding-bottom: 5px;
 	}
 	#execute_buttons{
@@ -107,12 +107,19 @@
 		cursor: pointer;
 	}	
 	#btn_download{
-			
-		padding: 8px 23px;
+		padding: 6px 23px 10px;
 		border: none;
 		margin-top: 3px;
 		font-size: 16px;
 		cursor: pointer;
+		background-color: buttonface;
+		box-sizing: border-box;
+		color: black;
+		text-decoration:none;
+
+	}
+	#btn_download:active{
+		outline: -webkit-focus-ring-color auto 5px;
 	}
 	#btn_add_custom_container
 	{
