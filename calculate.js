@@ -7,6 +7,20 @@ jQuery(document).ready(function($){
 	  }
 	});
 	
+	
+	$(document).on('click', '.row:not(:last-child)', function() {
+		removeselected();
+		$(this).children('.table').addClass("selected");
+		return false;
+	});
+	
+	function removeselected(){
+		$('.table').filter(function() {
+			$(this).removeClass("selected");  
+		});
+		
+	}
+	
 	$("#btn_clear_all").on('click', function(event){
 		
 		//Remove Custom Containers
@@ -16,35 +30,45 @@ jQuery(document).ready(function($){
 		
 		//Clear All Values
 		$(':input').val('');
-		$('#lbl_total,#lbl_total_lf,label[class*="results"]').html('0.0000');
+		$('#lbl_total,#lbl_total_lf,#lbl_total_containerslabel[class*="results"]').html('0.00');
+		$('#lbl_total_containers').html('0');
 		return false;
 	});
 	
 	//Add Custom Container 
 	$('#btn_add_custom_container').click(function() {
 		//Find last Custom Container Created
+		var $top_div = null;
 		var $div = $('div[id^="custom_container"]:last');
 		var num = parseInt( $div.prop("id").match(/\d+/g), 10 ) +1;
-		
+
 		var $custom_container = $div.clone().prop('id', 'custom_container'+num );
-		$custom_container.find(".table").html('<div class="cell custom_title" id="left">' +
+		$custom_container.find(".table").html('<div class="cell custom_title" id="left">' +		
+							'<button class="btn_remove" target="_blank" ></button>'+
 							'<lable  class="type">Custom Container ' + num + '<br>' +
-							'(<input type ="Text" name="inpt_custom_container_length_'  + num + '" id="inpt_custom_container_length_'  + num + '" placeholder="0.0" type="number" class="assumption_box"> x '  + 
-							'<input type ="Text" name="inpt_custom_container_width_' + num + '" id="inpt_custom_container_width_' + num + '" placeholder="0.0" type="number" class="assumption_box"> x ' +
-							'<input type ="Text" name="inpt_custom_container_height_' + num + '" id="inpt_custom_container_height_' + num + '" placeholder="0.0" type="number" class="assumption_box">)</lable>'  + 
+							'(L<input type ="Text" name="inpt_custom_container_length_'  + num + '" id="inpt_custom_container_length_'  + num + '" placeholder="0.0" type="number" class="assumption_box"> x '  + 
+							'<b>W</b><input type ="Text" name="inpt_custom_container_width_' + num + '" id="inpt_custom_container_width_' + num + '" placeholder="0.0" type="number" class="assumption_box"> x ' +
+							'H<input type ="Text" name="inpt_custom_container_height_' + num + '" id="inpt_custom_container_height_' + num + '" placeholder="0.0" type="number" class="assumption_box">)</lable>'  + 
 							'</div>' +
 							'<div class="cell" id="middle">' +
-								'<input type ="Text" id="custom_container_' + num + '" placeholder="0.0" type="number"  class="num_boxes">' +
+								'<input type ="Text" id="custom_container_' + num + '" placeholder="0" type="number"  class="num_boxes">' +
 							'</div>' +
 							'<div class="cell" id="right">'+
-								'<label id = "lbl_custom_container_' + num + '" class="results">0.0000</label>' + 
+								'<label id = "lbl_custom_container_' + num + '" class="results">0.00</label>' + 
 							'</div>' +
 							'<div class="cell" id="right">' +
-								'<label id = "lbl_custom_container_' + num +  '_lf" class="results_lf">0.0000</label>' + 
+								'<label id = "lbl_custom_container_' + num +  '_lf" class="results_lf">0.00</label>' + 
 							'</div>');
+		removeselected();
 		$div.after( $custom_container);
 		return false;
 	});
+	
+	$(document).on('click', '.btn_remove',function() {
+		$(this).closest('.row').remove();
+		return false;
+	});
+	
 	$(document).on('input', '.assumption_box, .num_boxes',function() {
 	   //Match Id to use this function for both assumption_box and num_boxes
 	   var id = $(this).attr('id').replace('inpt_', '').replace('length_', '').replace('width_', '').replace('height_', '');
@@ -55,70 +79,70 @@ jQuery(document).ready(function($){
 	   var custom_container_number = 1;
 	   if(id.match(/\d+$/))	var custom_container_number = id.match(/\d+$/)[0];
 	   switch(id) {
-		   case 'standard_record_storage_carton':
+		   case 'record_storage_carton_1':
+		   length = 16.25;
+		   width = 13;
+		   height = 10.5;
+		   break;
+		   
+		   case 'letter_document_box_1':
+		   length = 12.5;
+		   width = 2.5;
+		   height = 10.25;
+		   break;
+		   
+		   case 'letter_document_box_2':
+		   length = 12.5;
+		   width = 5;
+		   height = 10.25;
+		   break;
+		   
+		   case 'legal_document_box_1':
 		   length = 15.5;
-		   width = 12.5;
-		   height = 10.25;
-		   break;
-		   
-		   case 'letter_document_box':
-		   length = 12.25;
-		   width = 5;
-		   height = 10.25;
-		   break;
-		   
-		   case 'slim_letter_document_box':
-		   length = 12.25;
 		   width = 2.5;
 		   height = 10.25;
 		   break;
 		   
-		   case 'legal_document_box':
-		   length = 15.25;
+		   case 'legal_document_box_2':
+		   length = 15.5;
 		   width = 5;
 		   height = 10.25;
 		   break;
 		   
-		   case 'slim_legal_document_box':
-		   length = 15.25;
-		   width = 2.5;
-		   height = 10.25;
-		   break;
-		   
-		   case '7_legal_document_box':
-		   length = 15.25;
+		   case "legal_document_box_3":
+		   length = 15.5;
 		   width = 7;
 		   height = 10.25;
 		   break;
 		   
-		   case 'oversize_box_1':
+		   case 'oversize_document_box_1':
+		   length = 13.25;
+		   width = 6.5;
+		   height = 13;
+		   break;
+		   
+		   case 'oversize_document_box_2':
+		   length = 17;
+		   width = 6.5;
+		   height = 10.25;
+		   break;
+		     
+		   case 'oversize_flat_box_1':
+		   length = 20;
+		   width = 16.25;
+		   height = 3.5;
+		   break;
+		   
+		   case 'oversize_flat_box_2':
+		   length = 24.75;
+		   width = 20.75;
+		   height = 1;
+		   break;
+		   
+		   case 'oversize_flat_box_3':
 		   length = 31;
-		   width = 24;
+		   width = 24.75;
 		   height = 3;
-		   break;
-		   
-		   case 'oversize_box_2':
-		   length = 4;
-		   width = 20;
-		   height = 16;
-		   break;
-		   
-		   case 'flat_file_1':
-		   length = 16;
-		   width = 20;
-		   height =  $('#inpt_flat_file_1').val();
-		   break;
-		   
-		   case 'flat_file_2':
-		   length = 36;
-		   width = 48;
-		   height = $('#inpt_flat_file_2').val();
-		   break;
-		   
-		   case 'flat_file_3':
-		   length = 30;
-		   width = 24;
-		   height =  $('#inpt_flat_file_3').val();
 		   break;
 		   
 		   case 'roll_1':
@@ -128,13 +152,43 @@ jQuery(document).ready(function($){
 		   break;
 		   
 		   case 'roll_2':
+		   length = 36;
+		   width = 3;
+		   height = 3.25;
+		   break;
+		   
+		   case 'roll_3':
+		   length = 48;
+		   width = 3.75;
+		   height = 4;
+		   break; 
+		   
+		   case 'roll_4':
 		   length = 34;
 		   width = 4;
 		   height = 4;
 		   break;
 		   
-		   case 'hanging_folder':
-		   length = $('#inpt_hanging_folder').val();
+		   case 'oversize_flat_folder_1':
+		   length = 16;
+		   width = 20;
+		   height =  $('#inpt_oversize_flat_folder_1').val();
+		   break;
+		   
+		   case 'oversize_flat_folder_2':
+		   length = 36;
+		   width = 24;
+		   height = $('#inpt_oversize_flat_folder_2').val();
+		   break;
+		   
+		   case 'oversize_flat_folder_3':
+		   length = 35.75;
+		   width = 48;
+		   height =  $('#inpt_oversize_flat_folder_3').val();
+		   break;
+		   
+		   case 'vertical_hanging_folder':
+		   length =  $('#inpt_vertical_hanging_folder').val();
 		   width = 16;
 		   height = 9;
 		   break;
@@ -157,13 +211,14 @@ jQuery(document).ready(function($){
 		linear_feet = (width/12) * num;
 		
 		//Display calculation
-	    $('#lbl_' + id).html(cubic_feet.toFixed(4));
-	    $('#lbl_' + id + "_lf").html(linear_feet.toFixed(4));
+	    $('#lbl_' + id).html(cubic_feet.toFixed(2));
+	    $('#lbl_' + id + "_lf").html(linear_feet.toFixed(2));
 		
 		
 		//Display total
-		$('#lbl_total').html(getTotal().toFixed(4));
-		$('#lbl_total_lf').html(getLFTotal().toFixed(4));
+		$('#lbl_total_containers').html(getTotalContianers().toFixed(0)); 
+		$('#lbl_total').html(getTotal().toFixed(2));
+		$('#lbl_total_lf').html(getLFTotal().toFixed(2));
 		
 		return;
 	}
@@ -189,10 +244,29 @@ jQuery(document).ready(function($){
 		});
 		return total;
 	}
+	
+	//Calculate total of containers
+	function getTotalContianers(){
+		var total = 0.0;
+		var sum = 0.0;
+		$('.num_boxes').each(function() {
+			sum =  parseFloat($(this).val());
+			if(!isNaN(sum))
+				total += sum;
+		});
+		return total;
+	}
 	// This must be a hyperlink
 	$("#btn_download").on('click', function (event) {
 		// CSV
-		downloadCSV({ filename: "lc-report.csv" });
+		if($('#collection_name').val() && $('#collection_id').val()){
+			 filename = $('#collection_name').val() + "_" + $('#collection_id').val() + "_calculations.csv";
+		}else if($('#collection_name').val() && !$('#collection_id').val()){
+			 filename = $('#collection_name').val() + "_calculations.csv";
+		}else{
+			filename = "calc.csv";
+		}
+		downloadCSV({ filename: filename });
 		
 		// IF CSV, don't do event.preventDefault() or return false
 		// We actually need this to be a typical hyperlink
@@ -202,8 +276,14 @@ jQuery(document).ready(function($){
 		var label,input ;
 		var csvContent = "data:text/csv;charset=utf-8,";
 		
+				
+		var dateObj = new Date();
+		var month = dateObj.getUTCMonth() + 1; //months from 1-12
+		var day = dateObj.getUTCDate();
+		var year = dateObj.getUTCFullYear();
+		var newdate = year + "/" + month + "/" + day;
 		var data = [
-			["Collection Name:", $('#collection_name').val(), "Collection ID:", $('#collection_id').val()],
+			["Collection Name:", $('#collection_name').val(), "Collection ID:", $('#collection_id').val(), "Date:", newdate],
 			["Types of containers (L(in) x W(in) x H(in))","Number of containers","Cubic Feet","Linear Feet"],
 		];
 
@@ -226,7 +306,11 @@ jQuery(document).ready(function($){
 		//Add number of containers
 		i = 2; 
 		$('.num_boxes').each(function(info,index) {
-			data[i].push($(this).val());
+			value = $(this).val();
+			if(!value){
+				value = 0;
+			}
+			data[i].push(value);
 			i++;
 		});
 		
@@ -245,7 +329,7 @@ jQuery(document).ready(function($){
 		});
 		
 		//Add totals
-		data[i].push(['',$("#lbl_total").html(),$("#lbl_total_lf").html(),]);
+		data[i].push([$("#lbl_total_containers").html(),$("#lbl_total").html(),$("#lbl_total_lf").html(),]);
 		
 		//turn data array into cvs comma seperated list
 		data.forEach(function(infoArray, index){
@@ -254,26 +338,34 @@ jQuery(document).ready(function($){
 		   csvContent += index < data.length ? dataString+ "\n" : dataString;
 
 		}); 
-
 		filename = args.filename || 'export.csv';
+		var supportsDownloadAttribute = 'download' in document.createElement('a');
 
-		//Create downloand link
-		var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-		if (navigator.msSaveBlob) { // IE 10+
-			navigator.msSaveBlob(blob, filename);
+		var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+               navigator.userAgent && !navigator.userAgent.match('CriOS');
+		if(isSafari ||/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			alert("When the new window opens: right click on the page and click save as.\nThen, rename your file and add .csv to the end of the file name \n(e.g export.csv ");
+		    window.open('data:text/csv;base64,' + encodeURI(window.btoa(csvContent)));
 		} else {
-			link = document.createElement("a");
-			if (link.download !== undefined) { // feature detection
-				// Browsers that support HTML5 download attribute
-				var url = URL.createObjectURL(blob);
-				link.setAttribute("href", url);
-				link.setAttribute("download", filename);
-				link.style.visibility = 'hidden';
-				document.body.appendChild(link);
-				link.click();
-				document.body.removeChild(link);
-				
+			//Create downloand link
+			var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+			if (navigator.msSaveBlob) { // IE 10+
+				navigator.msSaveBlob(blob, filename);
+			} else {
+				link = document.createElement("a");
+				if (link.download !== undefined) { // feature detection
+					// Browsers that support HTML5 download attribute
+					var url = URL.createObjectURL(blob);
+					link.setAttribute("href", url);
+					link.setAttribute("download", filename);
+					link.style.visibility = 'hidden';
+					document.body.appendChild(link);
+					link.click();
+					document.body.removeChild(link);
+					
+				}
 			}
 		}
+		
 	}
 }); //End Document

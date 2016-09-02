@@ -1,4 +1,9 @@
-<h1 class="title" id="page-title-speccol">Cubic and Linear Foot Calculator</h1>
+<h1 class="title" id="page-title-speccol">Rebel Archives Calculator: for cubic and linear feet</h1>
+		  
+		  <p style="margin:0">&middot; This tool estimates <b>space occupied</b>  based on the <b>exterior</b> of each container (including the lid).</p>
+		  <p style="margin:0">&middot; It uses the <b>width</b> entered for each box to convert cubic feet to linear feet.</p>
+		  <p style="margin:0">&middot; See <a href="https://www.library.unlv.edu/tools">https://www.library.unlv.edu/tools</a> for more information.</p>
+		  </br>
 		<div id="collection_info_area"> 
 			<div class="collection_info">
 				<label > Collection Name: </label>
@@ -9,13 +14,12 @@
 				<input type ="Text" name="collection_id" id="collection_id">
 			</div>
 		</div>
-		  <label>*Please note: this tool uses the <b>width</b> entered for each box to convert cubic feet to linear feet. </label>
 		  <!--Begin page content-->
 			<div  id="top-table" class="table"> 
 				<div class="row" id="top-row">
 					<div class='table'>
 						<div class="cell topcell" id="left">
-							<label > Types of containers <br> (L(in) x W(in) x H(in))</label>
+							<label > Types of containers <br> (L(in) x <b>W</b>(in) x H(in))</label>
 						</div>
 						<div class="cell topcell" id="middle">
 							<label > Number of containers</label>
@@ -31,138 +35,175 @@
 				<div class="row">
 					<div class='table'>
 						<div class="cell" id="left">
-							<label class="type"> Standard Record Storage Carton <br>(15.5 x 12.5 x 10.25)</label>
+							<label class="type"> Record Storage Carton <br>(16.25 x <b>13</b> x 10.5)</label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" name="standard_record_storage_carton" id="standard_record_storage_carton" placeholder="0.0" type="number"  class="num_boxes"> 
+							<input type ="Text" name="record_storage_carton_1" id="record_storage_carton_1" placeholder="0" type="number"  class="num_boxes"> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_standard_record_storage_carton" value="0" class="results">0.0000</label> 
+							<label id = "lbl_record_storage_carton_1" class="results">0.00</label> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_standard_record_storage_carton_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_record_storage_carton_1_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class='table'> 
 						<div class="cell" id="left">
-							<label class="type">Letter Document Box  <br> (12.25 x 5 x 10.25) </label>
+							<label class="type"> Letter Document Box  <br> (12.5 x <b>2.5</b> x 10.25)</label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" name="letter_document_box" id="letter_document_box" placeholder="0.0" type="number"  class="num_boxes"> 
+							<input type ="Text" name="letter_document_box_1" id="letter_document_box_1" placeholder="0" type="number"  class="num_boxes"> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_letter_document_box" class="results">0.0000</label>
+							<label id = "lbl_letter_document_box_1" class="results">0.00</label> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_letter_document_box_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_letter_document_box_1_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
-				</div>
-				<div class="row"><div class='table'> <div class="cell" id="left">
-						<label class="type">Slim Letter Document Box  <br> (12.25 x 2.5 x 10.25)</label>
-					</div>
-					<div class="cell" id="middle">
-						<input type ="Text" name="slim_letter_document_box" id="slim_letter_document_box" placeholder="0.0" type="number"  class="num_boxes"> 
-					</div>
-					<div class="cell" id="right">
-						<label id = "lbl_slim_letter_document_box" class="results">0.0000</label> 
-					</div>
-					<div class="cell" id="right">
-						<label id = "lbl_slim_letter_document_box_lf" class="results_lf">0.0000</label> 
-					</div>
-				</div>
-				</div>
-				<div class="row"><div class='table'> <div class="cell" id="left">
-						<label class="type">Legal Document Box  <br> (15.25 x 5 x 10.25)</label>
-					</div>
-					<div class="cell" id="middle">
-						<input type ="Text" name="legal_document_box" id="legal_document_box" placeholder="0.0" type="number"  class="num_boxes">
-					</div>
-					<div class="cell" id="right">
-						<label id = "lbl_legal_document_box" class="results">0.0000</label> 
-					</div>
-					<div class="cell" id="right">
-						<label id = "lbl_legal_document_box_lf" class="results_lf">0.0000</label> 
-					</div>
-				</div>
-				</div>
-				<div class="row"><div class='table'> <div class="cell" id="left">
-						<label class="type">Slim Legal Document Box  <br> (15.25 x 2.5 x 10.25)</label>
-					</div>
-					<div class="cell" id="middle">
-						<input type ="Text" name="slim_legal_document_box" id="slim_legal_document_box" placeholder="0.0" type="number"  class="num_boxes"> 
-					</div>
-					<div class="cell" id="right">
-						<label id = "lbl_slim_legal_document_box" class="results">0.0000</label> 
-					</div>
-					<div class="cell" id="right">
-						<label id = "lbl_slim_legal_document_box_lf" class="results_lf">0.0000</label> 
-					</div>
-				</div>
-				</div>
-				<div class="row">
-				<div class='table'> <div class="cell" id="left">
-						<label class="type">7" Legal Document Box  <br> (15.25 x 7 x 10.25)</label>
-					</div>
-					<div class="cell" id="middle">
-						<input type ="Text" name="7_legal_document_box" id="7_legal_document_box" placeholder="0.0" type="number"  class="num_boxes"> 
-					</div>
-					<div class="cell" id="right">
-						<label id = "lbl_7_legal_document_box" class="results">0.0000</label> 
-					</div>
-					<div class="cell" id="right">
-						<label id = "lbl_7_legal_document_box_lf" class="results_lf">0.0000</label> 
-					</div>
-				</div>
 				</div>
 				<div class="row">
 					<div class='table'> 
 						<div class="cell" id="left">
-							<label class="type">Oversize Box  <br> (4 x 20 x 16)</label>
+							<label class="type">Letter Document Box  <br> (12.5 x <b>5</b> x 10.25) </label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" name="oversize_box_2" id="oversize_box_2" placeholder="0.0" type="number"  class="num_boxes"> 
+							<input type ="Text" name="letter_document_box_2" id="letter_document_box_2" placeholder="0" type="number"  class="num_boxes"> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_oversize_box_2" class="results">0.0000</label> 
+							<label id = "lbl_letter_document_box_2" class="results">0.00</label>
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_oversize_box_2_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_letter_document_box_2_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class='table'>
 						<div class="cell" id="left">
-							<label class="type">Oversize Box  <br> (31 x 24 x 3)</label>
+							<label class="type"> Legal Document Box  <br> (15.5 x <b>2.5</b> x 10.25)</label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" name="oversize_box_1" id="oversize_box_1" placeholder="0.0" type="number"  class="num_boxes"> 
+							<input type ="Text" name="legal_document_box_1" id="legal_document_box_1" placeholder="0" type="number"  class="num_boxes"> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_oversize_box_1" class="results">0.0000</label> 
+							<label id = "lbl_legal_document_box_1" class="results">0.00</label> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_oversize_box_1_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_legal_document_box_1_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'>
+						<div class="cell" id="left">
+							<label class="type">Legal Document Box  <br> (15.5 x <b>5</b> x 10.25)</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="legal_document_box_2" id="legal_document_box_2" placeholder="0" type="number"  class="num_boxes">
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_legal_document_box_2" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_legal_document_box_2_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'> <div class="cell" id="left">
+							<label class="type"> Legal Document Box  <br> (15.5 x <b>7</b> x 10.25)</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="legal_document_box_3" id="legal_document_box_3" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_legal_document_box_3" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_legal_document_box_3_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class='table'> 
 						<div class="cell" id="left">
-							<label class="type">Flat File<br> (16 x 20 x assume 
-							<input type ="Text" name="inpt_flat_file_1" id="inpt_flat_file_1"   placeholder="0.0" type="number"  class="assumption_box">)</label>
+							<label class="type">Oversize Document Box  <br> (13.25 x <b>6.5</b> x 13)</label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" name="flat_file_1" id="flat_file_1" placeholder="0.0" type="number"  class="num_boxes"> 
+							<input type ="Text" name="oversize_document_box_1" id="oversize_document_box_1" placeholder="0" type="number"  class="num_boxes"> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_flat_file_1" class="results">0.0000</label> 
+							<label id = "lbl_oversize_document_box_1" class="results">0.00</label> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_flat_file_1_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_oversize_document_box_1_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'> 
+						<div class="cell" id="left">
+							<label class="type">Oversize Document Box  <br> (17 x <b>6.5</b> x 10.25)</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="oversize_document_box_2" id="oversize_document_box_2" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_document_box_2" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_document_box_2_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'> 
+						<div class="cell" id="left">
+							<label class="type">Oversize Flat Box  <br> (20 x <b>16.25</b> x 3.5)</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="oversize_flat_box_1" id="oversize_flat_box_1" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_box_1" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_box_1_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'>
+						<div class="cell" id="left">
+							<label class="type">Oversize Flat Box  <br> (24.75 x <b>20.75</b> x 1)</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="oversize_flat_box_2" id="oversize_flat_box_2" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_box_2" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_box_2_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'>
+						<div class="cell" id="left">
+							<label class="type">Oversize Flat Box  <br> (31 x <b>24.75</b> x 3)</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="oversize_flat_box_3" id="oversize_flat_box_3" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_box_3" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_box_3_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
 				</div>
@@ -170,83 +211,133 @@
 				<div class="row">
 					<div class='table'> 
 						<div class="cell" id="left">
-							<label class="type">Flat File  <br>(30 x 24 x assume 
-							<input type ="Text" name="inpt_flat_file_3" id="inpt_flat_file_3" placeholder="0.0" type="number" class="assumption_box">)</label>
+							<label class="type">Tube/Roll/Box<br> (34 x <b>3</b> x 3 )</label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" name="flat_file_3" id="flat_file_3" placeholder="0.0" type="number"  class="num_boxes">
+							<input type ="Text" name="roll_1" id="roll_1" placeholder="0" type="number"  class="num_boxes"> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_flat_file_3" value="0.2" class="results">0.0000</label> 
+							<label id = "lbl_roll_1" class="results">0.00</label> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_flat_file_3_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_roll_1_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'> 
+						<div class="cell" id="left">
+							<label class="type">Tube/Roll/Box<br> (36 x <b>3</b> x 3.25 )</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="roll_2" id="roll_2" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_roll_2" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_roll_2_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class='table'> 
+						<div class="cell" id="left">
+							<label class="type">Tube/Roll/Box<br> (48 x <b>3.75</b> x 4 )</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="roll_3" id="roll_3" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_roll_3" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_roll_3_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'> 
+						<div class="cell" id="left">
+							<label class="type">Tube/Roll/Box<br> (34 x <b>4</b> x 4 )</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="roll_4" id="roll_4" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_roll_4" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_roll_4_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'> 
+						<div class="cell" id="left">
+							<label class="type">Oversize Flat Folder<br> (16 x <b>20</b> x  
+							<input type ="Text" name="inpt_oversize_flat_folder_1" id="inpt_oversize_flat_folder_1"   placeholder="0.0" type="number"  class="assumption_box">)</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="oversize_flat_folder_1" id="oversize_flat_folder_1" placeholder="0" type="number"  class="num_boxes"> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_folder_1" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_folder_1_lf" class="results_lf">0.00</label> 
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class='table'> 
+						<div class="cell" id="left">
+							<label class="type">Oversize Flat Folder  <br>(30 x <b>24</b> x  
+							<input type ="Text" name="inpt_oversize_flat_foldere_2" id="inpt_oversize_flat_folder_2" placeholder="0.0" type="number" class="assumption_box">)</label>
+						</div>
+						<div class="cell" id="middle">
+							<input type ="Text" name="oversize_flat_folder_2" id="oversize_flat_folder_2" placeholder="0" type="number"  class="num_boxes">
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_folder_2" class="results">0.00</label> 
+						</div>
+						<div class="cell" id="right">
+							<label id = "lbl_oversize_flat_folder_2_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class='table'>
 						<div class="cell" id="left">
-							<label class="type">Flat File  <br> (36 x 48  x assume 
-							<input type ="Text" name="inpt_flat_file_2" id="inpt_flat_file_2"   placeholder="0.0" type="number"  class="assumption_box">)</label>
+							<label class="type">Oversize Flat Folder  <br> (35.75 x <b>48</b>  x  
+							<input type ="Text" name="inpt_oversize_flat_folder_3" id="inpt_oversize_flat_folder_3"   placeholder="0.0" type="number"  class="assumption_box">)</label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" name="flat_file_2" id="flat_file_2" placeholder="0.0" type="number"  class="num_boxes">
+							<input type ="Text" name="oversize_flat_folder_3" id="oversize_flat_folder_3" placeholder="0" type="number"  class="num_boxes">
 						</div>
 						<div class="cell" id="right">				
-							<label id = "lbl_flat_file_2" class="results">0.0000</label> 
+							<label id = "lbl_oversize_flat_folder_3" class="results">0.00</label> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_flat_file_2_lf" class="results_lf">0.0000</label> 
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class='table'> 
-						<div class="cell" id="left">
-							<label class="type">Roll/Box<br> (34 x 3 x 3 )</label>
-						</div>
-						<div class="cell" id="middle">
-							<input type ="Text" name="roll_1" id="roll_1" placeholder="0.0" type="number"  class="num_boxes"> 
-						</div>
-						<div class="cell" id="right">
-							<label id = "lbl_roll_1" class="results">0.0000</label> 
-						</div>
-						<div class="cell" id="right">
-							<label id = "lbl_roll_1_lf" class="results_lf">0.0000</label> 
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class='table'> 
-						<div class="cell" id="left">
-							<label class="type">Roll/Box<br> (34 x 4 x 4 )</label>
-						</div>
-						<div class="cell" id="middle">
-							<input type ="Text" name="roll_2" id="roll_2" placeholder="0.0" type="number"  class="num_boxes"> 
-						</div>
-						<div class="cell" id="right">
-							<label id = "lbl_roll_2" class="results">0.0000</label> 
-						</div>
-						<div class="cell" id="right">
-							<label id = "lbl_roll_2_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_oversize_flat_folder_3_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class='table'>
 						<div class="cell" id="left">
-						<label class="type">Hanging Folder  <br> 
-							(<input type ="Text" name="inpt_hanging_folder" id="inpt_hanging_folder"  placeholder="0.0" type="number" class="assumption_box"> x 16 x 9)</label>
+						<label class="type">Vertical Hanging Folder  <br> 
+							(<input type ="Text" name="inpt_vertical_hanging_folder" id="inpt_vertical_hanging_folder"  placeholder="0.0" type="number" class="assumption_box"> x <b>16</b> x 9)</label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" name="hanging_folder" id="hanging_folder"  placeholder="0.0" type="number"  class="num_boxes"> 
+							<input type ="Text" name="vertical_hanging_folder" id="vertical_hanging_folder"  placeholder="0" type="number"  class="num_boxes"> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_hanging_folder" class="results">0.0000</label> 
+							<label id = "lbl_vertical_hanging_folder" class="results">0.00</label> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_hanging_folder_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_vertical_hanging_folder_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
 				</div> 
@@ -254,18 +345,18 @@
 					<div class='table'> 
 						<div class="cell custom_title" id="left">
 							<label class="type">Custom Container 1<br> 
-							(<input type ="Text" name="inpt_custom_container_length_1" id="inpt_custom_container_length_1" placeholder="0.0" type="number" class="assumption_box"> x 
-							<input type ="Text" name="inpt_custom_container_width_1" id="inpt_custom_container_width_1"  placeholder="0.0" type="number" class="assumption_box"> x
-							<input type ="Text" name="inpt_custom_container_height_1" id="inpt_custom_container_height_1" placeholder="0.0" type="number" class="assumption_box">)</label>
+							(L<input type ="Text" name="inpt_custom_container_length_1" id="inpt_custom_container_length_1" placeholder="0.0" type="number" class="assumption_box"> x 
+							<b>W</b><input type ="Text" name="inpt_custom_container_width_1" id="inpt_custom_container_width_1"  placeholder="0.0" type="number" class="assumption_box"> x
+							H<input type ="Text" name="inpt_custom_container_height_1" id="inpt_custom_container_height_1" placeholder="0.0" type="number" class="assumption_box">)</label>
 						</div>
 						<div class="cell" id="middle">
-							<input type ="Text" id="custom_container_1"  placeholder="0.0" type="number"  class="num_boxes"> 
+							<input type ="Text" id="custom_container_1"  placeholder="0" type="number"  class="num_boxes"> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_custom_container_1" class="results">0.0000</label> 
+							<label id = "lbl_custom_container_1" class="results">0.00</label> 
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_custom_container_1_lf" class="results_lf">0.0000</label> 
+							<label id = "lbl_custom_container_1_lf" class="results_lf">0.00</label> 
 						</div>
 					</div>
 				</div> 
@@ -282,19 +373,20 @@
 						<div class="cell " id="left">
 							<label class="type"><b>Total</b>  </label>
 						</div>
-						<div class="cell" id="middle">
+						<div class="cell" id="right">
+							<label id = "lbl_total_containers">0</label>
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_total">0.0000</label>
+							<label id = "lbl_total">0.00</label>
 						</div>
 						<div class="cell" id="right">
-							<label id = "lbl_total_lf">0.0000</label> 
+							<label id = "lbl_total_lf">0.00</label> 
 						</div>
 					</div>
 				</div>
 			</div>
 			<div id="execute_buttons">
-					<a id="btn_download" >Download</a>
+					<a id="btn_download" target="_blank">Download</a>
 					<button id="btn_clear_all" > Clear All </button>
 			</div>
 				<!--End Calculator -->
