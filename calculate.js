@@ -30,8 +30,8 @@ jQuery(document).ready(function($){
 		
 		//Clear All Values
 		$(':input').val('');
-		$('#lbl_total,#lbl_total_lf,#lbl_total_containerslabel[class*="results"]').html('0.00');
-		$('#lbl_total_containers').html('0');
+		$('.results, .results_lf').html('0.00');
+		$('#lbl_total_containers, #lbl_total, #lbl_total_lf').html('0');
 		return false;
 	});
 	
@@ -176,20 +176,20 @@ jQuery(document).ready(function($){
 		   break;
 		   
 		   case 'oversize_flat_folder_2':
-		   length = 36;
+		   length = 30;
 		   width = 24;
 		   height = $('#inpt_oversize_flat_folder_2').val();
 		   break;
 		   
 		   case 'oversize_flat_folder_3':
-		   length = 35.75;
-		   width = 48;
+		   length = 48;
+		   width = 35.75;
 		   height =  $('#inpt_oversize_flat_folder_3').val();
 		   break;
 		   
 		   case 'vertical_hanging_folder':
-		   length =  $('#inpt_vertical_hanging_folder').val();
-		   width = 16;
+		   length =  16; 
+		   width = $('#inpt_vertical_hanging_folder').val();
 		   height = 9;
 		   break;
 		   
@@ -274,7 +274,7 @@ jQuery(document).ready(function($){
 	function downloadCSV(args) {  
 		var data, filename, link, i;
 		var label,input ;
-		var csvContent = "data:text/csv;charset=utf-8,";
+		var csvContent = "";
 		
 				
 		var dateObj = new Date();
@@ -329,7 +329,7 @@ jQuery(document).ready(function($){
 		});
 		
 		//Add totals
-		data[i].push([$("#lbl_total_containers").html(),$("#lbl_total").html(),$("#lbl_total_lf").html(),]);
+		data[i].push([$("#lbl_total_containers").html(),$("#lbl_total").html(),$("#lbl_total_lf").html()]);
 		
 		//turn data array into cvs comma seperated list
 		data.forEach(function(infoArray, index){
@@ -343,10 +343,19 @@ jQuery(document).ready(function($){
 
 		var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
                navigator.userAgent && !navigator.userAgent.match('CriOS');
-		if(isSafari ||/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-			alert("When the new window opens: right click on the page and click save as.\nThen, rename your file and add .csv to the end of the file name \n(e.g export.csv ");
+		if(isSafari) {
+			alert("When the new window opens: right click on the page and click save as.\nThen, rename your file and add .csv to the end of the file name \n(e.g export.csv) ");
 		    window.open('data:text/csv;base64,' + encodeURI(window.btoa(csvContent)));
-		} else {
+		} else if(/webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			alert("IMPORTANT: Make sure you have an app than can open CSV files (like Microsoft Excel)\n\n" + 
+			"When the new window opens, you can open the file on an app that can open CSV files. \n\n" +
+			"You have two options for saving your data:\n\n" +
+			"click \"Open in\" in Safari to email yourself the CSV or open on an app that can open CSV files\n\n"+
+			"OR copy and paste it into a google sheet (in Google Drive)\n\n" +
+			"(check the the calculator tips for more information)");
+			window.open('data:text/csv;base64,' + encodeURI(window.btoa(csvContent)));
+		}else {
+
 			//Create downloand link
 			var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
 			if (navigator.msSaveBlob) { // IE 10+
